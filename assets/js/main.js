@@ -1,9 +1,3 @@
-/*
-	Resume by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function ($) {
 
     var $window = $(window),
@@ -209,4 +203,53 @@
 
     }
 
+    /*---------------------------------------------------- */
+    /* Owl Carousel
+    ------------------------------------------------------ */
+    $("#owl-slider").owlCarousel({
+        navigation: false,
+        pagination: true,
+        itemsCustom: [
+            [0, 1],
+            [700, 2],
+            [960, 3]
+        ],
+        navigationText: false
+    });
+
+    /*---------------------------------------------------- */
+    /*	Masonry
+    ------------------------------------------------------ */
+    var containerProjects = $('#folio-wrapper');
+
+    containerProjects.imagesLoaded(function () {
+
+        containerProjects.masonry({
+            itemSelector: '.folio-item',
+            resize: true
+        });
+
+    });
+
+
+    /*----------------------------------------------------*/
+    /*	Modal Popup
+    ------------------------------------------------------*/
+    $('.item-wrap a').magnificPopup({
+
+        type: 'inline',
+        fixedContentPos: false,
+        removalDelay: 300,
+        showCloseBtn: false,
+        mainClass: 'mfp-fade'
+
+    });
+
+    $(document).on('click', '.popup-modal-dismiss', function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
+    });
+
 })(jQuery);
+
+
