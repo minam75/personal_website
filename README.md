@@ -1,2 +1,2 @@
-# personal_website
+# Website
 My personal academic CE website
